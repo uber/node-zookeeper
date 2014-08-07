@@ -1,34 +1,40 @@
 {
-   "name": "zookeeper"
-  ,"description": "apache zookeeper client (zookeeper async API >= 3.4.0)"
-  ,"version": "3.4.6-3"
-  ,"author": "Yuri Finkelstein <yurif2003@yahoo.com>"
-  ,"contributors": [
-    "Yuri Finkelstein <yurif2003@yahoo.com>"
-    ,"Woody Anderson <woody.anderson@gmail.com>"
-    ,"Mark Cavage <mcavage@gmail.com>"
-    ,"Dave Dopson <ddopson@gmail.com>"
-    ,"David Trejo <david.daniel.trejo@gmail.com>"
-    ,"Pooya Karimian <pkarimian@sencha.com>"
-    ,"Jakub Lekstan <kuebzky@gmail.com>"
-  ]
-  ,"repository": {
-      "type": "git"
-      ,"url": "https://github.com/yfinkelstein/node-zookeeper"
+  "name": "zookeeper",
+  "description": "apache zookeeper client (zookeeper async API >= 3.4.0)",
+  "version": "3.4.6-3-bundled",
+  "author": "Yuri Finkelstein <yurif2003@yahoo.com>",
+  "contributors": [
+    "Yuri Finkelstein <yurif2003@yahoo.com>",
+    "Woody Anderson <woody.anderson@gmail.com>",
+    "Mark Cavage <mcavage@gmail.com>",
+    "Dave Dopson <ddopson@gmail.com>",
+    "David Trejo <david.daniel.trejo@gmail.com>",
+    "Pooya Karimian <pkarimian@sencha.com>",
+    "Jakub Lekstan <kuebzky@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yfinkelstein/node-zookeeper"
+  },
+  "keywords": [
+    "apache",
+    "zookeeper",
+    "client"
+  ],
+  "dependencies": {
+    "async": "~0.2.6",
+    "underscore": "*"
+  },
+  "devDependencies": {
+    "log4js": "~0.6.0",
+    "webworker": ">=0.8.4"
+  },
+  "main": "lib/index",
+  "scripts": {
+    "build": "node-gyp configure build",
+    "test": "pushd test; ./test; popd"
+  },
+  "engines": {
+    "node": ">=0.8"
   }
-  ,"keywords": ["apache", "zookeeper", "client"]
-  ,"dependencies": {
-    "async": "~0.2.6"
-    ,"underscore": "*"
-  }
-  ,"devDependencies": {
-    "log4js": "~0.6.0"
-    ,"webworker": ">=0.8.4"
-  }
-  ,"main": "lib/index"
-  ,"scripts" : {
-     "build" : "node-gyp configure build"
-     ,"test" : "pushd test; ./test; popd"
-  }
-  ,"engines": { "node": ">=0.8" }
 }
