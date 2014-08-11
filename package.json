@@ -1,34 +1,52 @@
 {
-   "name": "zookeeper"
-  ,"description": "apache zookeeper client (zookeeper async API >= 3.4.0)"
-  ,"version": "3.4.6-3"
-  ,"author": "Yuri Finkelstein <yurif2003@yahoo.com>"
-  ,"contributors": [
-    "Yuri Finkelstein <yurif2003@yahoo.com>"
-    ,"Woody Anderson <woody.anderson@gmail.com>"
-    ,"Mark Cavage <mcavage@gmail.com>"
-    ,"Dave Dopson <ddopson@gmail.com>"
-    ,"David Trejo <david.daniel.trejo@gmail.com>"
-    ,"Pooya Karimian <pkarimian@sencha.com>"
-    ,"Jakub Lekstan <kuebzky@gmail.com>"
-  ]
-  ,"repository": {
-      "type": "git"
-      ,"url": "https://github.com/yfinkelstein/node-zookeeper"
+  "name": "zookeeper",
+  "description": "apache zookeeper client (zookeeper async API >= 3.4.0)",
+  "version": "3.4.6-4",
+  "author": "Yuri Finkelstein <yurif2003@yahoo.com>",
+  "contributors": [
+    "Yuri Finkelstein <yurif2003@yahoo.com>",
+    "Woody Anderson <woody.anderson@gmail.com>",
+    "Mark Cavage <mcavage@gmail.com>",
+    "Dave Dopson <ddopson@gmail.com>",
+    "David Trejo <david.daniel.trejo@gmail.com>",
+    "Pooya Karimian <pkarimian@sencha.com>",
+    "Jakub Lekstan <kuebzky@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yfinkelstein/node-zookeeper"
+  },
+  "keywords": [
+    "apache",
+    "zookeeper",
+    "client"
+  ],
+  "dependencies": {
+    "async": "~0.2.6",
+    "underscore": "*",
+    "node-pre-gyp": "^0.5.23"
+  },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
+  "devDependencies": {
+    "log4js": "~0.6.0",
+    "webworker": ">=0.8.4",
+    "node-pre-gyp": "^0.5.23",
+    "aws-sdk": "^2.0.11"
+  },
+  "main": "lib/index",
+  "scripts": {
+    "build": "node-gyp configure build",
+    "test": "pushd test; ./test; popd",
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "binary": {
+    "module_name": "zookeeper",
+    "module_path": "./lib/binding/",
+    "host": "https://node-zookeeper-bin.s3.amazonaws.com"
+  },
+  "engines": {
+    "node": ">=0.8"
   }
-  ,"keywords": ["apache", "zookeeper", "client"]
-  ,"dependencies": {
-    "async": "~0.2.6"
-    ,"underscore": "*"
-  }
-  ,"devDependencies": {
-    "log4js": "~0.6.0"
-    ,"webworker": ">=0.8.4"
-  }
-  ,"main": "lib/index"
-  ,"scripts" : {
-     "build" : "node-gyp configure build"
-     ,"test" : "pushd test; ./test; popd"
-  }
-  ,"engines": { "node": ">=0.8" }
 }
