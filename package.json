@@ -1,5 +1,5 @@
 {
-  "name": "zookeeper",
+  "name": "zookeeper-uber",
   "description": "apache zookeeper client (zookeeper async API >= 3.4.0)",
   "version": "3.4.6-3-bundled",
   "author": "Yuri Finkelstein <yurif2003@yahoo.com>",
