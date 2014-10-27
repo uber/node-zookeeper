@@ -23,16 +23,28 @@
   ],
   "dependencies": {
     "async": "~0.2.6",
-    "underscore": "*"
+    "underscore": "*",
+    "node-pre-gyp": "^0.5.23"
   },
+  "bundledDependencies": [
+    "node-pre-gyp"
+  ],
   "devDependencies": {
     "log4js": "~0.6.0",
-    "webworker": ">=0.8.4"
+    "webworker": ">=0.8.4",
+    "node-pre-gyp": "^0.5.23",
+    "aws-sdk": "^2.0.11"
   },
   "main": "lib/index",
   "scripts": {
     "build": "node-gyp configure build",
-    "test": "pushd test; ./test; popd"
+    "test": "pushd test; ./test; popd",
+    "install": "node-pre-gyp install --fallback-to-build"
+  },
+  "binary": {
+    "module_name": "zookeeper",
+    "module_path": "./lib/binding/",
+    "host": "https://node-zookeeper-bin.s3.amazonaws.com"
   },
   "engines": {
     "node": ">=0.8"

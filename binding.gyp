@@ -48,6 +48,17 @@
         "outputs": ["<(module_root_dir)/build/zookeeper.node"],
         "action": ["sh", "libzk-symlink.sh", "<@(_inputs)"]
       }]
+    },
+    {
+      "target_name": "action_after_build",
+      "type": "none",
+      "dependencies": [ "<(module_name)" ],
+      "copies": [
+        {
+          "files": [ "<(PRODUCT_DIR)/<(module_name).node" ],
+          "destination": "<(module_path)"
+        }
+      ]
     }
   ],
 }
